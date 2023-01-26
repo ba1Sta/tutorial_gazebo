@@ -1,0 +1,17 @@
+<launch>
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+        <remap from="/odom" to="/automan_cart/odom" />
+        <remap from="/cmd_vel" to="/automan_cart/cmd_vel" />       
+        <rosparam file="$(find cart_description)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find cart_description)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find cart_description)/param/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find cart_description)/param/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find cart_description)/param/base_local_planner_params.yaml" command="load" />
+        <!-- <rosparam file="$(find cart_description)/param/teb_local_planner_params.yaml" command="load" /> -->
+
+        <!-- <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" /> -->
+        <param name="control_frequency" value="50.0" />
+
+        <param name="clearing_rotation_allowed" value="false" />
+    </node>
+</launch>

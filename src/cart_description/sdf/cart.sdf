@@ -1,0 +1,387 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+
+  <model name="cart">
+    <link name="chassis">
+      <pose>0 0 0.15  0 0 0</pose>
+      <inertial>
+        <pose>0.1 0 0  0 0 0</pose>
+        <mass>10</mass>
+        <inertia>
+          <ixx>0.21666666666666667</ixx>
+          <iyy>0.8416666666666667</iyy>
+          <izz>1.0416666666666667</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1.0 0.5 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1.0 0.5 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    
+    <link name="wheel_front_left">
+      <pose>0.5 0.298 0.15  -1.5707963267948966 -0.08726646259971647 0</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0030791666666666667</ixx>
+          <iyy>0.0030791666666666667</iyy>
+          <izz>0.005625</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.9</mu>
+              <mu2>0.9</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    
+    <joint name="wheel_front_left_spin" type="revolute">
+      <parent>chassis</parent>
+      <child>wheel_front_left</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    
+    <link name="wheel_front_right">
+      <pose>0.5 -0.298 0.15  -1.5707963267948966 -0.08726646259971647 0</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0030791666666666667</ixx>
+          <iyy>0.0030791666666666667</iyy>
+          <izz>0.005625</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.9</mu>
+              <mu2>0.9</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    
+    <joint name="wheel_front_right_spin" type="revolute">
+      <parent>chassis</parent>
+      <child>wheel_front_right</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    
+    <link name="wheel_rear_left">
+      <pose>-0.5 0.298 0.15  -1.5707963267948966 0 0</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0030791666666666667</ixx>
+          <iyy>0.0030791666666666667</iyy>
+          <izz>0.005625</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.9</mu>
+              <mu2>0.9</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="wheel_rear_left_spin" type="revolute">
+      <parent>chassis</parent>
+      <child>wheel_rear_left</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    
+    <link name="wheel_rear_right">
+      <pose>-0.5 -0.298 0.15  -1.5707963267948966 0 0</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0030791666666666667</ixx>
+          <iyy>0.0030791666666666667</iyy>
+          <izz>0.005625</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.9</mu>
+              <mu2>0.9</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="wheel_rear_right_spin" type="revolute">
+      <parent>chassis</parent>
+      <child>wheel_rear_right</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+  
+    <!-- Laser -->
+    <link name="laser_link">
+      <pose>0 0 0.3 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+  
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+  
+      <inertial>
+        <mass>1e-5</mass>
+        <inertia>
+          <ixx>1e-6</ixx>
+          <iyy>1e-6</iyy>
+          <izz>1e-6</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <sensor name="laser" type="ray">
+        <pose>0.000 0 0.000 0 0 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>1.000000</resolution>
+              <min_angle>-3.14</min_angle>
+              <max_angle>3.14</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>100</max>
+            <resolution>0.010000</resolution>
+          </range>
+        </ray>
+        
+        <plugin name='laser_controller' filename='libgazebo_ros_laser.so'>
+          <gaussianNoise>0.005</gaussianNoise>
+          <alwaysOn>1</alwaysOn>
+          <updateRate>50</updateRate>
+          <topicName>/scan</topicName>
+          <frameName>laser_link</frameName>
+        </plugin>
+        <visualize>true</visualize>
+        <update_rate>50</update_rate>
+      </sensor>
+    </link>
+
+    <joint name="laser_joint" type="fixed">
+      <parent>chassis</parent>
+      <child>laser_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>70.0</updateRate>
+      <robotNamespace>cart</robotNamespace>
+      <leftFrontJoint>wheel_front_left_spin</leftFrontJoint>
+      <rightFrontJoint>wheel_front_right_spin</rightFrontJoint>
+      <leftRearJoint>wheel_rear_left_spin</leftRearJoint>
+      <rightRearJoint>wheel_rear_right_spin</rightRearJoint>
+      <wheelSeparation>0.6</wheelSeparation>
+      <wheelDiameter>0.3</wheelDiameter>
+      <robotBaseFrame>chassis</robotBaseFrame>
+      <torque>10.0</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <broadcastTF>1</broadcastTF>
+    </plugin>
+
+    <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <robotNamespace>/cart</robotNamespace>
+      <jointName>wheel_front_left_spin, wheel_front_right_spin, wheel_rear_left_spin, wheel_rear_right_spin, laser_joint</jointName>
+      <updateRate>100.0</updateRate>
+      <alwaysOn>true</alwaysOn>
+    </plugin>
+    
+  </model>
+
+</sdf>

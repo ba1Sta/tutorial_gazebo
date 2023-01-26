@@ -1,0 +1,17 @@
+local_costmap:
+  global_frame: map #global frame
+  robot_base_frame: base_link #robot frame
+ 
+  update_frequency: 10.0 
+  publish_frequency: 10.0 
+  transform_tolerance: 0.5 #time to wait for tf
+
+  inflation_radius: 1.0
+
+  cost_scaling_factor: 3.0
+ 
+  static_map: false
+  rolling_window: true
+  width: 30 # local map width (m)
+  height: 30 # local map height (m)
+  resolution: 0.1 # local map resolution (m)

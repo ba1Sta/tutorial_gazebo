@@ -1,0 +1,40 @@
+<launch>
+    <arg name="robot_type" default="automan_cart" />
+    <!-- <arg name="world" default="/usr/share/gazebo-11/worlds/road.world" /> -->
+    <!-- <arg name="world" default="/usr/share/gazebo-11/worlds/empty.world" /> -->
+    <arg name="world" default="$(find cart_description)/worlds/Automan_factory_with_obstacles.world" />
+
+    <arg name="x" default="0" />
+    <arg name="y" default="0" />
+    <arg name="z" default="1" />
+
+    <!--Gazebo Variables-->
+    <arg name="paused" default="true" />
+    <arg name="use_sim_time" default="true" />
+    <arg name="gui" default="true" />
+    <arg name="headless" default="false" />
+    <arg name="debug" default="false" />
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world)" />
+        <arg name="paused" value="$(arg paused)" />
+        <arg name="use_sim_time" value="$(arg use_sim_time)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="headless" value="$(arg headless)" />
+        <arg name="debug" value="$(arg debug)" />
+    </include>
+
+    <param name="robot_description" command="cat $(find cart_description)/urdf/cart.urdf" />
+    <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x $(arg x) -y $(arg y) -z $(arg z) -model $(arg robot_type) " output="screen" />
+
+    <node name="fake_joint_calibration" pkg="rostopic" type="rostopic" args="pub /calibrated std_msgs/Bool true" />
+    
+    <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" />
+    <node pkg="joint_state_publisher" name="joint_state_publisher" type="joint_state_publisher" />
+
+    <!-- keyboard control -->
+    <!-- rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/automan_cart/cmd_vel -->
+    <!-- <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop">
+        <remap from="cmd_vel" to="/automan_cart/cmd_vel"/>
+      </node> -->
+</launch>

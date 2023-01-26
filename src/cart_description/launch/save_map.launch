@@ -1,0 +1,4 @@
+<launch>
+    <arg name="Automan_env" value="$(find cart_description)/maps/map" />
+    <node name="map_save" pkg="map_server" type="map_saver" args="-f $(arg Automan_env)" />
+</launch>

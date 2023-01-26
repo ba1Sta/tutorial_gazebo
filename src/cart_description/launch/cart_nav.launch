@@ -1,0 +1,12 @@
+<launch>
+    <!-- config map -->
+    <arg name="Automan_factory" default="map.yaml" />
+    <!-- run map server-->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find cart_description)/maps/$(arg Automan_factory)"/>
+    <!-- run AMCL -->
+    <include file="$(find cart_description)/launch/cart_amcl.launch" />
+    <!-- run move_base -->
+    <include file="$(find cart_description)/launch/cart_path_planning.launch" />
+    <!-- run rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find cart_description)/rviz/Automan_nav.rviz"/>
+</launch>
