@@ -1,5 +1,5 @@
 # tutorial_gazebo
-Dear NTU Students from MA4890 Autonomous Driving,
+Dear Students from NTU MA4890 Autonomous Driving,
 
 Welcome to our tutorial on Gazebo! Here is the source code presented in the class. We're excited to have you as part of this tutorial and we hope you find this tutorial both informative and instructive.
 
