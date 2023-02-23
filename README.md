@@ -12,3 +12,7 @@ We encourage you to ask questions, share your feedback, and engage with your fel
 We hope you enjoy this tutorial and find it valuable for your personal and professional development. As you dive into this and other lectures and tutorials of MA4890, we wish you all the best and look forward to seeing what you'll learn from this course.
 
 Let's get started!
+
+>
+git clone https://github.com/ba1Sta/tutorial_gazebo.git
+>
