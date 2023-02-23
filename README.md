@@ -12,7 +12,20 @@ We encourage you to ask questions, share your feedback, and engage with your fel
 We hope you enjoy this tutorial and find it valuable for your personal and professional development. As you dive into this and other lectures and tutorials of MA4890, we wish you all the best and look forward to seeing what you'll learn from this course.
 
 Let's get started!
-
-> 
+1. Get to a file folder to build up your workspace
+```
 git clone https://github.com/ba1Sta/tutorial_gazebo.git
-> 
+```
+2. Get into the workspace and source setup.bash
+```
+cd tutorial_gazebo/
+source devel/setup.bash
+```
+3. Open gazebo with base controller
+```
+roslaunch cart_description cart_description.launch
+```
+4. Open another terminal conduct step 2 as well and then run navigation stack by
+```
+roslaunch cart_description cart_nav.launch
+```
