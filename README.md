@@ -12,7 +12,7 @@ We encourage you to ask questions, share your feedback, and engage with your fel
 We hope you enjoy this tutorial and find it valuable for your personal and professional development. As you dive into this and other lectures and tutorials of MA4890, we wish you all the best and look forward to seeing what you'll learn from this course.
 
 Let's get started!
-Ensure you have completely install [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu), [Gazebo 11](https://classic.gazebosim.org/tutorials?tut=install_ubuntu), [gazebo_ros_pkgs](https://classic.gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros) and [ROS Control](http://wiki.ros.org/ros_control).
+Ensure you have completely install [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu), [Gazebo 11](https://classic.gazebosim.org/tutorials?tut=install_ubuntu), [gazebo_ros_pkgs](https://classic.gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros), [ROS Control](http://wiki.ros.org/ros_control) and [ROS Navigation](https://automaticaddison.com/how-to-set-up-the-ros-navigation-stack-on-a-robot/).
 1. Get to a file folder to build up your workspace
 ```
 git clone https://github.com/ba1Sta/tutorial_gazebo.git
