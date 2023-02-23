@@ -13,6 +13,6 @@ We hope you enjoy this tutorial and find it valuable for your personal and profe
 
 Let's get started!
 
->
+> 
 git clone https://github.com/ba1Sta/tutorial_gazebo.git
->
+> 
